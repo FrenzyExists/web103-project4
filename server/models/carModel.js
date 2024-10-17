@@ -84,5 +84,5 @@ export default {
   Interior,
   Exterior,
   CarBase,
-  Car,
+  Car
 };

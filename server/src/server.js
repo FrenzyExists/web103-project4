@@ -1,7 +1,17 @@
-const express = require('express');
-const swaggerUi = require('swagger-ui-express');
-const swaggerJsDoc = require('swagger-jsdoc');
-const path = require('path');
+import express from 'express';
+import swaggerUi from 'swagger-ui-express'
+import swaggerJsDoc from 'swagger-jsdoc'
+import path from 'path'
+// const express = require('express');
+// const swaggerUi = require('swagger-ui-express');
+// const swaggerJsDoc = require('swagger-jsdoc');
+// const path = require('path');
+
+
+// const carRouter = require('../routes/carRoutes.js')
+// Import routers
+import carRouter from '../routes/carRoutes.js'
+
 
 const app = express();
 const port = 3002;
@@ -21,6 +31,8 @@ const swaggerOptions = {
 // Swagger setup
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use('/apidoc', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+app.use('/api/cars', carRouter);
+
 
 // Sample route
 app.get('/api', (req, res) => {
