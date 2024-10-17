@@ -20,7 +20,7 @@ const swaggerOptions = {
 
 // Swagger setup
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+app.use('/apidoc', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 // Sample route
 app.get('/api', (req, res) => {
